@@ -10,6 +10,7 @@ const Checkout = () => {
   const purchase = () => {
     setCartItems([]); 
     navigate('/');
+    alert("All items sucessfully purchased!")
   };
 
   return (

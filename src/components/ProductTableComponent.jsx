@@ -19,6 +19,8 @@ const ProductTableComponent = ({ productData }) => {
         if (product) {
             setCartItems([...cartItems, product]);
         }
+
+        alert("Product sucessfully added to cart!")
     };
     
         
@@ -29,7 +31,6 @@ const ProductTableComponent = ({ productData }) => {
             <div className='product-card' key={product.id}>
             <h3>{product.title}</h3>
             <h5>Category: {product.category}</h5>
-            <p>{product.description}</p>
             <img src={product.image} />
             <h4>Price: ${product.price} CAD</h4>
             <div className='buttons'>

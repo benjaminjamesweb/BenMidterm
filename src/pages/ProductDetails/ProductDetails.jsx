@@ -26,7 +26,10 @@ const ProductDetails = () => {
   }
 
   return (
-    <ProductDetailsComponent data={productData} />
+    <div>
+      <h1>Product Details</h1>
+      <ProductDetailsComponent data={productData} />
+    </div>
   );
 };
 
