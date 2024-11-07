@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import ProductDetailsComponent from './ProductDetailsComponent';
+import './ProductDetails.css'
 
 const ProductDetails = () => {
   const { product } = useParams();
@@ -26,7 +27,7 @@ const ProductDetails = () => {
   }
 
   return (
-    <div>
+    <div className='div'>
       <h1>Product Details</h1>
       <ProductDetailsComponent data={productData} />
     </div>

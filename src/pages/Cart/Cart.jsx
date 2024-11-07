@@ -19,7 +19,10 @@ const Cart = () => {
           </div>
         ))
 }
+<div className='buttons'>
 <button onClick={() => navigate('/')}>HomePage</button>
+<button onClick={() => navigate('/checkout')}>Proceed to Checkout?</button>
+</div>
 
     </div>
   );

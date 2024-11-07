@@ -26,6 +26,7 @@ const ProductTableComponent = ({ productData }) => {
         
   return (
     <div>
+        <div className='grid'>
       { 
         productData.map((product) => (
             <div className='product-card' key={product.id}>
@@ -40,9 +41,13 @@ const ProductTableComponent = ({ productData }) => {
             </div>
             </div>
       ))
+
       }
+            </div>
     </div>
   );
 };
 
 export default ProductTableComponent
+
+

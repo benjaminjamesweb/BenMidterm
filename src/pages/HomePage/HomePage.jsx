@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductsComponent from '../../components/ProductsComponent'
 import { useNavigate } from 'react-router-dom';
+import './HomePage.css'
 
 const HomePage = () => {
   const navigate = useNavigate();
