@@ -1,44 +1,33 @@
-import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import ProductDetailsComponent from './ProductDetailsComponent';
 
 const ProductDetails = () => {
-
-  const { productID } = useParams();
-  const [productData, setProductData] = useState({});
-  const navigate = useNavigate();
+  const { product } = useParams();
+  const [productData, setProductData] = useState(null);
 
 
   useEffect(() => {
     getProductInfo();
- }, [])
+  }, [product]);
 
- const getProductInfo = async () => {
-    const data = await fetch(`https://fakestoreapi.com/products/${productID}`);
-    const jsonData = await data.json();
-    setProductData(jsonData);
- }
+  const getProductInfo = async () => {
+    try {
+      const response = await fetch(`https://fakestoreapi.com/products/${product}`);
+      const jsonData = await response.json();
+      setProductData(jsonData);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
- console.log(productData)
+  if (!productData) {
+    return <div>Loading...</div>;
+  }
 
   return (
-      <div>
+    <ProductDetailsComponent data={productData} />
+  );
+};
 
-          <div className='product-card' key={productData.id}>
-              <h3>{productData.title}</h3>
-              <h5>Category: {productData.category}</h5>
-              <p>{productData.description}</p>
-              <img src={productData.image} />
-              <h4>Price: ${productData.price} CAD</h4>
-              <p>Rated {productData.rating.rate} by {productData.rating.count} customers</p>
-            </div>
-
-            <button onClick={() => {
-                navigate('/')
-            }}>BACK </button>
-      </div>
-  )
-}
-
-export default ProductDetails
+export default ProductDetails;

@@ -1,7 +1,7 @@
 import { useRoutes } from 'react-router-dom'
 import './App.css'
 import HomePage from './pages/HomePage/HomePage'
-import ProductDetailsPage from './pages/ProductDetails/ProductDetails'
+import ProductDetails from './pages/ProductDetails/ProductDetails'
 import Cart from './pages/Cart/Cart'
 import Checkout from './pages/Checkout/Checkout'
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
@@ -16,7 +16,7 @@ function App() {
       },
       {
         path: '/product/:product',
-        element: <ProductDetailsPage />
+        element: <ProductDetails />
       },
       {
         path: '/cart',
