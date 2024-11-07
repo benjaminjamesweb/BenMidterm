@@ -1,8 +1,12 @@
 import { useRoutes } from 'react-router-dom'
 import './App.css'
+import HomePage from './pages/HomePage/HomePage'
+import ProductDetailsPage from './pages/ProductDetails/ProductDetails'
+import Cart from './pages/Cart/Cart'
+import Checkout from './pages/Checkout/Checkout'
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
 
 function App() {
-
 
   let element = useRoutes(
     [
@@ -29,7 +33,8 @@ function App() {
     ]
   )
 
-  return element;
+  return element
+
 }
 
-export default App
+export default App;
