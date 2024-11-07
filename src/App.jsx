@@ -4,9 +4,13 @@ import HomePage from './pages/HomePage/HomePage'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
 import Cart from './pages/Cart/Cart'
 import Checkout from './pages/Checkout/Checkout'
+import {useState} from 'react'
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
+import CartContext from './context/CartContext'
 
 function App() {
+
+  const [cartItems, setCartItems] = useState([]);
 
   let element = useRoutes(
     [
@@ -33,8 +37,15 @@ function App() {
     ]
   )
 
-  return element
-
+  return (
+    <div>
+      <CartContext.Provider value = {
+      {cartItems, setCartItems}
+    }>
+      {element}
+      </CartContext.Provider>
+    </div>
+  )
 }
 
-export default App;
+export default App
