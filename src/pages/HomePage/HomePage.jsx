@@ -7,8 +7,9 @@ const HomePage = () => {
 
   return (
     <div>
-      <div>
+      <div className='buttons'>
         <button onClick={() => navigate('/cart')}>View Cart</button>
+        <button onClick={() => navigate('/checkout')}>Checkout</button>
       </div>
       <div className='header'>
       <h1>Ben's Shop</h1>

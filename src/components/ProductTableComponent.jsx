@@ -32,9 +32,11 @@ const ProductTableComponent = ({ productData }) => {
             <p>{product.description}</p>
             <img src={product.image} />
             <h4>Price: ${product.price} CAD</h4>
+            <div className='buttons'>
             <p>Rated {product.rating.rate} by {product.rating.count} customers</p>
             <button onClick={() => getDetails(product.id)}>See details</button>
             <button onClick={() => addToCart(product.id)}>Add to Cart</button>
+            </div>
             </div>
       ))
       }
